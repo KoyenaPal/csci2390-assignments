@@ -1,6 +1,5 @@
 from client import avg, count, count0, _pretty_print
 from dp import dp_histogram
-
 # This function should expose the true value of some aggregate/query
 # by abusing the fact that you can make many such queries.
 # query_func is a 0-arguments function, every time you call it, you execute the
@@ -29,7 +28,12 @@ def expose(query_func):
   for r in range(0, rows):
     # TODO: compute the actual value of row r, given all the noised values from
     # making many queries.
-    value = "?"
+    total_value = 0.0
+    for i in range(num_iterations):
+      curr_value = many_results[i][r][-1]
+      total_value = total_value + curr_value
+    #print("total value", total_value)
+    value = round(float(total_value)/float(num_iterations))
     
     # Append value and attached label to exposed result.
     labels = tuple(many_results[0][r][:-1])
