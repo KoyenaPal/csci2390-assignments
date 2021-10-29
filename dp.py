@@ -54,7 +54,7 @@ def plot(epsilon):
   pyplot.plot(xs, ys, 'o-', ds='steps-mid')
   pyplot.xlabel("Count value")
   pyplot.ylabel("Frequency")
-  pyplot.savefig('dp-plot-ep-01.png')
+  pyplot.savefig('dp-plot.png')
 
 # Run this for epsilon 0.5
 if __name__ == "__main__":

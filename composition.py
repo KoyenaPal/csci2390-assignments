@@ -55,17 +55,15 @@ if __name__ == "__main__":
   _pretty_print(headers, result)  
 
   # Expose the average age per programming level.
-  '''
+
   print("Exposing average:")
   headers, result = expose(lambda: avg(["programming"], "age", True))
   _pretty_print(headers, result)
   print("")
-  '''
   
   # Expose the count of people per programming level.
-  '''
+
   print("Exposing count:")
   headers, result = expose(lambda: count0(["programming"], True))
   _pretty_print(headers, result)
   print("")
-  '''
